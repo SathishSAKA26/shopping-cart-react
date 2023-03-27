@@ -1,7 +1,14 @@
 import React from "react";
+import CartContainer from "./component/CartContainer";
+import Navbar from "./component/Navbar";
 
 const App = () => {
-  return <div className="text-2xl my-5 font-bold underline">App</div>;
+  return (
+    <>
+      <Navbar />
+      <CartContainer />
+    </>
+  );
 };
 
 export default App;

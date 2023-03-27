@@ -2,11 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
+// custom css
 import "./index.css";
+
+// import app provider
+import { AppProvider } from "./features/context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>
 );
