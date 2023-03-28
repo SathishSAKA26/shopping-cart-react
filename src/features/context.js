@@ -14,8 +14,19 @@ const initialState = {
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const clearItems = () => {
+    dispatch({ type: "CLEAR_ITEMS" });
+  };
+
+  const removeItem = () => {
+    dispatch({ type: "REMOVE_ITEM", payload: "id" });
+  };
+
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, clearItems, removeItem }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 

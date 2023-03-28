@@ -6,7 +6,7 @@ import { useGlobalContext } from "../features/context";
 
 const CartContainer = () => {
   // object desetchering
-  const { Cart, totalPrice } = useGlobalContext();
+  const { Cart, totalPrice, clearItems } = useGlobalContext();
 
   // create empty array msg in empty items
   if (Cart.length === 0) {
@@ -46,7 +46,11 @@ const CartContainer = () => {
             total <span className="">${totalPrice}</span>
           </h3>
         </div>
-        <button className="px-20 py-1  ml-44 text-bold text-2xl  text-red-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-red-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 ">
+        {/* clear button */}
+        <button
+          className="px-20 py-1  ml-44 text-bold text-2xl  text-red-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-red-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
+          onClick={() => clearItems()}
+        >
           Clear Cart
         </button>
       </footer>
