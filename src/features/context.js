@@ -7,7 +7,7 @@ import reducer from "../reducers/reducer";
 const AppContext = React.createContext();
 
 const initialState = {
-  cartItems: cartItems,
+  Cart: cartItems,
   totalQuantity: 0,
   totalPrice: 0,
 };
